@@ -1,0 +1,71 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+.profile-container p {
+  margin: 0;
+}
+
+.profile-content {
+  width: 90%;
+}
+
+.profile-left {
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  padding: 0;
+}
+
+#profile-intro {
+  display: flex;
+  padding: 1rem;
+}
+
+.profile-info-container img {
+  width: 10rem;
+}
+
+.profile-stats {
+  display: flex;
+  width: 100%;
+}
+
+#div-1 {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+#div-2 {
+  border: 2px solid black;
+}
+
+#div-3 {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.profile-stats div {
+  /* border-width: 2px;
+  border-style: solid;
+  border-color: black; */
+  width: 100%;
+  padding: 1rem;
+}
+
+.profile-stats p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#profile-equipment,
+#profile-ingredients,
+#profile-instructions,
+#profile-nutrition {
+  padding: 1rem;
+  border-bottom: 2px solid black;
+}

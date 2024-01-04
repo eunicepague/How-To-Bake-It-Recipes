@@ -26,7 +26,7 @@ const Category = () => {
   }, []);
 
   return (
-    <Container className="category-container">
+    <Container className="category-container" id="home">
       <section className="category-content">
         <Row>
           {categories.map((category, index) => (

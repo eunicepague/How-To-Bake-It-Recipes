@@ -9,7 +9,7 @@ import Icecreams from './sections/Icecreams';
 import Desserts from './sections/Desserts';
 const Home = () => {
   return (
-    <div>
+    <>
       <Category />
       <Cookies />
       <Cakes />
@@ -18,7 +18,7 @@ const Home = () => {
       <Coblers />
       <Icecreams />
       <Desserts />
-    </div>
+    </>
   );
 };
 
