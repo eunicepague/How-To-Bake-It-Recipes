@@ -43,40 +43,46 @@ const Profile = () => {
                 <div className="profile-stats">
                   <div id="div-1">
                     <p>PREP TIME:</p>
+                    <p>{recipe.prep}</p>
                   </div>
                   <div id="div-2">
                     <p>COOK TIME:</p>
+                    <p>{recipe.cook}</p>
                   </div>
                   <div id="div-3">
                     <p>TOTAL TIME:</p>
+                    <p>{recipe.total}</p>
                   </div>
                   <div id="div-1">
                     <p>SERVINGS:</p>
+                    <p>{recipe.serving}</p>
                   </div>
                 </div>
 
                 <div id="profile-equipment">
                   <h3>Equipment</h3>
-                  <p>sample</p>
-                  <p>sample</p>
-                  <p>sample</p>
-                  <p>sample</p>
+                  <p>{recipe.equipment}</p>
                 </div>
 
                 <div id="profile-ingredients">
                   <h3>Ingredients</h3>
-                  <p>sample</p>
-                  <p>sample</p>
-                  <p>sample</p>
-                  <p>sample</p>
+                  {recipe.ingredient.map((item, index) => (
+                    <ul key={index}>
+                      <li>{item}</li>
+                    </ul>
+                  ))}
                 </div>
 
                 <div id="profile-instructions">
                   <h3>Instructions</h3>
-                  <p>sample</p>
-                  <p>sample</p>
-                  <p>sample</p>
-                  <p>sample</p>
+                  {recipe.instruction.map((step, index) => {
+                    const [stepNumber, instrcution] = Object.entries(step)[0];
+                    return (
+                      <p key={index}>
+                        <strong>{stepNumber}: </strong> {instrcution}
+                      </p>
+                    );
+                  })}
                 </div>
 
                 <div id="profile-nutrition">

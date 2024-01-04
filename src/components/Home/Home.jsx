@@ -7,6 +7,7 @@ import Pies from './sections/Pies';
 import Coblers from './sections/Coblers';
 import Icecreams from './sections/Icecreams';
 import Desserts from './sections/Desserts';
+import About from './../About/About';
 const Home = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const Home = () => {
       <Coblers />
       <Icecreams />
       <Desserts />
+      <About />
     </>
   );
 };
