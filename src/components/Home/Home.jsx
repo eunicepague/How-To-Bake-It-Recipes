@@ -1,4 +1,5 @@
 // import React from 'react';
+import Category from './sections/Category';
 import Cookies from './sections/Cookies';
 import Cakes from './sections/Cakes';
 import Frostings from './sections/Frostings';
@@ -9,6 +10,7 @@ import Desserts from './sections/Desserts';
 const Home = () => {
   return (
     <div>
+      <Category />
       <Cookies />
       <Cakes />
       <Frostings />

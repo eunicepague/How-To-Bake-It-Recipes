@@ -8,7 +8,7 @@ const Coblers = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(import.meta.env.VITE_API);
+      const response = await axios.get(`${import.meta.env.VITE_API}/recipes`);
       const data = response.data;
       const cobblerRecipes = data.filter(
         (recipe) => recipe.category === 'Cobblers'

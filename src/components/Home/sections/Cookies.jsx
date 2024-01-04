@@ -10,9 +10,8 @@ const Cookies = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(import.meta.env.VITE_API);
+      const response = await axios.get(`${import.meta.env.VITE_API}/recipes`);
       const data = response.data;
-      console.log(data);
       const cookieRecipes = data.filter((recipe) =>
         Array.isArray(recipe.category)
           ? recipe.category.includes('Cookies')

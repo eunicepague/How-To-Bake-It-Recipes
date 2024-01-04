@@ -9,7 +9,7 @@ const Pies = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(import.meta.env.VITE_API);
+      const response = await axios.get(`${import.meta.env.VITE_API}/recipes`);
       const data = response.data;
       const pieRecipes = data.filter((recipe) => recipe.category === 'Pies');
       setRecipes(pieRecipes);
@@ -28,7 +28,7 @@ const Pies = () => {
         <div id="home-intro">
           <h1>PIE RECIPES</h1>
           <div className="horizontal-line"></div>
-          <p>view more</p>
+          <h5>view more</h5>
         </div>
 
         <Recipe recipes={recipes} />

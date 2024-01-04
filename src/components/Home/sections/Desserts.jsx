@@ -8,15 +8,13 @@ const Desserts = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(import.meta.env.VITE_API);
+      const response = await axios.get(`${import.meta.env.VITE_API}/recipes`);
       const data = response.data;
-      console.log(data);
       const dessertRecipes = data.filter((recipe) =>
         Array.isArray(recipe.category)
           ? recipe.category.includes('Desserts')
           : recipe.category === 'Desserts'
       );
-      console.log(dessertRecipes); // Log the dessertRecipes array to check the filter operation
       setRecipes(dessertRecipes);
     } catch (error) {
       console.error('Error fetching data: ', error);

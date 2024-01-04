@@ -9,9 +9,8 @@ const Cakes = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(import.meta.env.VITE_API);
+      const response = await axios.get(`${import.meta.env.VITE_API}/recipes`);
       const data = response.data;
-      console.log(data); // Log the data to inspect it
       const cakeRecipes = data.filter((recipe) => recipe.category === 'Cakes');
       setRecipes(cakeRecipes);
     } catch (error) {

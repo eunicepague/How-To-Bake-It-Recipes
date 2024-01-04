@@ -63,3 +63,23 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media (max-width: 768px) {
+  .home-img-container {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-direction: row;
+  }
+
+  .home-img-content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .home-img-content img {
+    max-width: 400px;
+    height: 400px;
+    object-fit: cover;
+  }
+}

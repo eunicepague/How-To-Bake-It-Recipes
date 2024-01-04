@@ -9,7 +9,7 @@ const Icecreams = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(import.meta.env.VITE_API);
+      const response = await axios.get(`${import.meta.env.VITE_API}/recipes`);
       const data = response.data;
       const icecreamRecipes = data.filter(
         (recipe) => recipe.category === 'Ice Cream'
