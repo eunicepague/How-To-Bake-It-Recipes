@@ -42,20 +42,6 @@ const Category = () => {
         </Row>
       </section>
     </Container>
-    // <Container className="category-container" id="home">
-    //   <section className="category-content">
-    //     <Row>
-    //       {categories.map((category, index) => (
-    //         <Col key={index} className="category-img-container">
-    //           <div className="category-img-content">
-    //             <img src={category.images} />
-    //             <h6>{category.type}</h6>
-    //           </div>
-    //         </Col>
-    //       ))}
-    //     </Row>
-    //   </section>
-    // </Container>
   );
 };
 

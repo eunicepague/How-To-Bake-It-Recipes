@@ -58,6 +58,7 @@
 
 .home-img-content {
   width: 100%;
+  height: 100%;
 }
 
 .home-img-content img {
@@ -106,4 +107,15 @@
     width: 100%;
     padding: 0.5rem;
   }
+}
+
+/* ----LINK----- */
+.home-img-container a {
+  color: inherit; /* Changes the link color to the color of the parent element */
+  text-decoration: none; /* Removes the underline */
+}
+
+.home-img-container a:hover {
+  color: inherit; /* Keeps the link color the same even when hovered */
+  text-decoration: none; /* Keeps the underline removed even when hovered */
 }

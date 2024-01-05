@@ -1,4 +1,5 @@
 import { Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Recipe = ({ recipes }) => (
   <Row>
@@ -11,10 +12,12 @@ const Recipe = ({ recipes }) => (
         md={3}
         lg={3}
       >
-        <div className="home-img-content">
-          <img src={recipe.image[0]} alt={recipe.title} />
-          <h5>{recipe.title}</h5>
-        </div>
+        <Link to={`/profiles/${recipe.id}`}>
+          <div className="home-img-content">
+            <img src={recipe.image[0]} alt={recipe.title} />
+            <h5>{recipe.title}</h5>
+          </div>
+        </Link>
       </Col>
     ))}
   </Row>

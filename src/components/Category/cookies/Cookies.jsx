@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import axios from 'axios';
 import './../Category.css';
-
 import AllCategory from './../AllCategory';
 import CookiesIntro from './CookiesIntro';
 import Related from './../../Home/sections/Related';
@@ -28,7 +27,7 @@ const Cookies = () => {
 
   return (
     <>
-      <Container className="categorys-container">
+      <Container fluid className="categorys-container">
         <section className="categorys-content">
           <CookiesIntro categoryRecipes={recipes} />
           <div className="category-blk-line"></div>
