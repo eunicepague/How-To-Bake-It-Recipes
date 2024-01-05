@@ -38,6 +38,11 @@
   padding-left: 1rem;
 }
 
+#home-intro a {
+  display: flex;
+  align-items: center;
+}
+
 .home-img-content h5 {
   display: flex;
   align-items: center;

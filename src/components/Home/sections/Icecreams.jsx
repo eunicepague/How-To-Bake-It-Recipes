@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import Recipe from './recipe';
 
 const Icecreams = () => {
@@ -30,7 +31,9 @@ const Icecreams = () => {
         <div id="home-intro">
           <h1>ICE CREAM RECIPES</h1>
           <div className="horizontal-line"></div>
-          <h5>view more</h5>
+          <Link to="/category/icecreams">
+            <h5>view more</h5>
+          </Link>
         </div>
 
         <Recipe recipes={recipes} />

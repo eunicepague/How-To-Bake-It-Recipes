@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 import './Category.css';
 
 const Category = () => {
@@ -31,15 +31,31 @@ const Category = () => {
         <Row>
           {categories.map((category, index) => (
             <Col key={index} className="category-img-container">
-              <div className="category-img-content">
-                <img src={category.images} />
-                <h6>{category.type}</h6>
-              </div>
+              <Link to={`/category/${category.type.toLowerCase()}`}>
+                <div className="category-img-content">
+                  <img src={category.images} />
+                  <h6>{category.type}</h6>
+                </div>
+              </Link>
             </Col>
           ))}
         </Row>
       </section>
     </Container>
+    // <Container className="category-container" id="home">
+    //   <section className="category-content">
+    //     <Row>
+    //       {categories.map((category, index) => (
+    //         <Col key={index} className="category-img-container">
+    //           <div className="category-img-content">
+    //             <img src={category.images} />
+    //             <h6>{category.type}</h6>
+    //           </div>
+    //         </Col>
+    //       ))}
+    //     </Row>
+    //   </section>
+    // </Container>
   );
 };
 

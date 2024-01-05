@@ -1,0 +1,249 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+.profile-container p {
+  margin: 0;
+}
+
+.profile-content {
+  width: 90%;
+}
+
+.profile-left {
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  padding: 0 !important;
+}
+
+/* ---------CHEF--------- */
+#profile-intro {
+  display: flex;
+  padding: 2rem;
+  width: 100%;
+}
+
+.profile-chef-content {
+  width: 100%;
+}
+.text-col {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+
+.text-col h1 {
+  font-weight: bold;
+  font-size: 3.3rem;
+}
+
+.text-col h5 {
+  margin-bottom: 2rem;
+}
+
+.image-col {
+  width: 100%;
+  height: 100%;
+}
+
+.image-content {
+  display: flex;
+  width: 100%;
+  min-height: 10rem;
+  object-fit: cover;
+}
+
+.image-content img {
+  width: 100%;
+  height: 400px;
+  min-height: 10rem;
+  object-fit: cover;
+}
+
+.chef-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.chef-btn-container button {
+  background-color: black;
+  border-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 16x;
+  width: 48%;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+@media (max-width: 992px) {
+  .text-col h1 {
+    font-weight: bold;
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .text-col {
+    order: 2;
+  }
+
+  .image-col {
+    order: 1;
+  }
+
+  .image-col {
+    height: 100%;
+  }
+
+  .image-content img {
+    width: 100%;
+    height: 400px;
+    min-height: 10rem;
+    object-fit: cover;
+  }
+}
+
+/* ---------STAT--------- */
+.profile-stats {
+  display: flex;
+  width: 100%;
+}
+
+.profile-stats h6 {
+  margin: 0;
+}
+
+#div-1,
+#div-2,
+#div-3 {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+#div-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+@media (max-width: 576px) {
+  .profile-stats {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  #div-1,
+  #div-2,
+  #div-3,
+  #div-4 {
+    width: 50%;
+  }
+
+  #div-1,
+  #div-2 {
+    border-bottom: 0;
+  }
+  #div-2 {
+    border-right: 0;
+  }
+}
+/* ---------EQUIPMENT, INGREDIENT, INSTRUCTION--------- */
+#profile-equipment,
+#profile-ingredient,
+#profile-instructions {
+  padding: 2rem;
+  border-bottom: 2px solid black;
+}
+
+/* ---------INGREDIENT-------- */
+
+.form-check input[type='checkbox'] {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: white;
+  vertical-align: bottom;
+}
+
+.form-check input[type='checkbox']:checked {
+  background-color: black;
+}
+
+.form-check input[type='checkbox']:checked + label {
+  text-decoration: line-through;
+}
+
+/* ---------NUTRITION--------- */
+.nutrition-container {
+  padding: 2rem;
+}
+
+#profile-nutrition {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+#profile-nutrition p {
+  margin-right: 10px;
+}
+
+/* ---------JOIN--------- */
+.profile-join {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  min-height: 20rem;
+  width: 100%;
+}
+
+.profile-join-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.profile-join-content h1 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.profile-join-content h5 {
+  margin: 1.5rem 0;
+}
+
+.profile-join-content button {
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  width: 10rem;
+  height: 3rem;
+}
+
+@media (max-width: 576px) {
+  .profile-about {
+    display: none;
+  }
+}

@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import Recipe from './recipe';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Frostings = () => {
   const [recipes, setRecipes] = useState([]);
@@ -30,7 +31,9 @@ const Frostings = () => {
         <div id="home-intro">
           <h1>FROSTING RECIPES</h1>
           <div className="horizontal-line"></div>
-          <h5>view more</h5>
+          <Link to="/category/frostings">
+            <h5>view more</h5>
+          </Link>
         </div>
 
         <Recipe recipes={recipes} />

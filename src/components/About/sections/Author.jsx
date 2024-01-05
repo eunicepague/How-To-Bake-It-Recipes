@@ -29,6 +29,8 @@ const Author = () => {
   return (
     <Container fluid className="author-container">
       <section className="author-content">
+        <div className="author-blk-line"></div>
+
         {chefs.map((chef, index) => (
           <Row key={index}>
             <Col id="author-img-container" sm={12} md={6} lg={5}>
@@ -52,6 +54,7 @@ const Author = () => {
             </Col>
           </Row>
         ))}
+        <div className="author-blk-line"></div>
       </section>
     </Container>
   );
