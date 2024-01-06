@@ -1,10 +1,30 @@
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from './components/Home/Home';
-import About from './components/About/About';
 import Headers from './components/Headers';
 import routes from './routes';
+import Loaders from './components/Loaders';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a data fetching function
+    const fetchData = async () => {
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // Wait for 2 seconds
+      setIsLoading(false); // Set loading to false when data is ready
+    };
+
+    fetchData();
+  }, []); // Empty dependency array means this effect runs once on mount.
+
+  if (isLoading) {
+    return (
+      <>
+        <Loaders />
+      </>
+    );
+  }
+
   return (
     <>
       <Headers />
@@ -25,4 +45,5 @@ function App() {
     </>
   );
 }
+
 export default App;
