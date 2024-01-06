@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import axios from 'axios';
-import Recipe from './recipe';
+import Recipe from './Recipe';
 
 const Desserts = () => {
   const [recipes, setRecipes] = useState([]);

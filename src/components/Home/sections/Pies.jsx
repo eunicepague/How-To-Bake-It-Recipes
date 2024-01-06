@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Recipe from './recipe';
+import Recipe from './Recipe';
 
 const Pies = () => {
   const [recipes, setRecipes] = useState([]);
