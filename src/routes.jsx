@@ -13,7 +13,7 @@ import Desserts from './components/Category/desserts/Desserts';
 
 const routes = [
   {
-    path: '/home',
+    path: '/',
     element: <Home />,
   },
   {
