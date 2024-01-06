@@ -188,7 +188,7 @@
   background-color: black;
 }
 
-.form-check input[type='checkbox']:checked + label {
+.form-check:not(.no-line-through) input[type='checkbox']:checked + label {
   text-decoration: line-through;
 }
 
