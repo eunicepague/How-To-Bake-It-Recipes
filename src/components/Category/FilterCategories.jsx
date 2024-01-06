@@ -36,9 +36,7 @@ const FilterCategories = ({ handleCheck, selectedCategories }) => {
         <section className="filterCategories-content">
           <div>
             <Dropdown autoClose="outside">
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Dropdown Button
-              </Dropdown.Toggle>
+              <Dropdown.Toggle id="dropdown-basic">Category</Dropdown.Toggle>
 
               <Dropdown.Menu>
                 {categories.map(

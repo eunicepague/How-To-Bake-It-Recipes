@@ -77,8 +77,16 @@
 
 .filterCategories-container {
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
   width: 100%;
-  min-height: 20vh;
+  min-height: 10vh;
+}
+
+.dropdown,
+.dropdown-menu,
+.dropdown-toggles {
+  background-color: black;
 }
 
 /* ----------LINK----------- */
@@ -91,4 +99,12 @@
 .categorys-all-content a:hover {
   color: inherit; /* Keeps the link color the same even when hovered */
   text-decoration: none; /* Keeps the underline removed even when hovered */
+}
+
+/* -----------DROPDOWN-------------- */
+
+.dropdown-menu.show {
+  top: 100% !important;
+  bottom: auto !important;
+  transform: translateY(5px) !important;
 }
