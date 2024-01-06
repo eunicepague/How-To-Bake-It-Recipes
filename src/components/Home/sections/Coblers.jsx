@@ -24,13 +24,18 @@ const Coblers = () => {
     fetchData();
   }, []);
 
+  // ScrollToTop
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Container className="home-container">
       <section className="home-content">
         <div id="home-intro">
           <h1>COBBLER RECIPES</h1>
           <div className="horizontal-line"></div>
-          <Link to="/category/cobblers">
+          <Link to="/category/cobblers" onClick={scrollToTop}>
             <h5>view more</h5>
           </Link>
         </div>

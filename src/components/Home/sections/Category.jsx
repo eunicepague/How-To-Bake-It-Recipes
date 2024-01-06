@@ -25,13 +25,21 @@ const Category = () => {
     fetchData();
   }, []);
 
+  // ScrollToTop
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Container className="category-container" id="home">
       <section className="category-content">
         <Row>
           {categories.map((category, index) => (
             <Col key={index} className="category-img-container">
-              <Link to={`/category/${category.type.toLowerCase()}`}>
+              <Link
+                to={`/category/${category.type.toLowerCase()}`}
+                onClick={scrollToTop}
+              >
                 <div className="category-img-content">
                   <img src={category.images} />
                   <h6>{category.type}</h6>

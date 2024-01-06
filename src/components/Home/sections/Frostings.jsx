@@ -25,13 +25,18 @@ const Frostings = () => {
     fetchData();
   }, []);
 
+  // ScrollToTop
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Container className="home-container">
       <section className="home-content">
         <div id="home-intro">
           <h1>FROSTING RECIPES</h1>
           <div className="horizontal-line"></div>
-          <Link to="/category/frostings">
+          <Link to="/category/frostings" onClick={scrollToTop}>
             <h5>view more</h5>
           </Link>
         </div>

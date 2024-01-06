@@ -20,6 +20,11 @@ const Cakes = () => {
     }
   };
 
+  // ScrollToTop
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -30,7 +35,7 @@ const Cakes = () => {
         <div id="home-intro">
           <h1>CAKE RECIPES</h1>
           <div className="horizontal-line"></div>
-          <Link to="/category/cakes">
+          <Link to="/category/cakes" onClick={scrollToTop}>
             <h5>view more</h5>
           </Link>
         </div>

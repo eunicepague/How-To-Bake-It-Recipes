@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import axios from 'axios';
 import Recipe from './Recipe';
@@ -25,13 +26,19 @@ const Desserts = () => {
     fetchData();
   }, []);
 
+  // ScrollToTop
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <Container className="home-container">
       <section className="home-content">
         <div id="home-intro">
           <h1>DESSERT RECIPES</h1>
           <div className="horizontal-line"></div>
-          <h5>view more</h5>
+          <Link to="/category/desserts" onClick={scrollToTop}>
+            <h5>view more</h5>
+          </Link>
         </div>
 
         <Recipe recipes={recipes} />

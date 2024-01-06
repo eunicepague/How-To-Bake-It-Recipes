@@ -25,13 +25,18 @@ const Icecreams = () => {
     fetchData();
   }, []);
 
+  // ScrollToTop
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Container className="home-container">
       <section className="home-content">
         <div id="home-intro">
           <h1>ICE CREAM RECIPES</h1>
           <div className="horizontal-line"></div>
-          <Link to="/category/icecreams">
+          <Link to="/category/icecreams" onClick={scrollToTop}>
             <h5>view more</h5>
           </Link>
         </div>

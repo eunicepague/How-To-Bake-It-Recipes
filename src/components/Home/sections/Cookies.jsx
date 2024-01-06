@@ -27,13 +27,18 @@ const Cookies = () => {
     fetchData();
   }, []);
 
+  // ScrollToTop
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Container className="home-container">
       <section className="home-content">
         <div id="home-intro">
           <h1>COOKIE RECIPES</h1>
           <div className="horizontal-line"></div>
-          <Link to="/category/cookies">
+          <Link to="/category/cookies" onClick={scrollToTop}>
             <h5>view more</h5>
           </Link>
         </div>
