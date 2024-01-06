@@ -1,4 +1,3 @@
-// import React from 'react';
 import { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
@@ -11,6 +10,8 @@ import FilterCategories from './FilterCategories';
 
 const Categories = () => {
   const [recipes, setRecipies] = useState([]);
+  // Added selectedCategories state
+  const [selectedCategories, setSelectedCategories] = useState([]);
 
   const fetchData = async () => {
     try {
@@ -26,16 +27,33 @@ const Categories = () => {
     fetchData();
   }, []);
 
+  // Added handleCheck function
+  const handleCheck = (category) => {
+    setSelectedCategories((prev) =>
+      prev.includes(category)
+        ? prev.filter((c) => c !== category)
+        : [...prev, category]
+    );
+  };
+
   return (
     <>
       <Container className="categorys-container">
         <section className="categorys-content">
           <CategoriesIntro categoryRecipes={recipes} />
           <div className="category-blk-line"></div>
-          <FilterCategories />
+          {/* Passed handleCheck and selectedCategories as props to FilterCategories */}
+          <FilterCategories
+            handleCheck={handleCheck}
+            selectedCategories={selectedCategories}
+          />
           <div className="category-blk-line"></div>
 
-          <AllCategory recipes={recipes} />
+          {/* Passed selectedCategories as a prop to AllCategory */}
+          <AllCategory
+            recipes={recipes}
+            selectedCategories={selectedCategories}
+          />
         </section>
       </Container>
       <Related />

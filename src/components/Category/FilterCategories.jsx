@@ -1,18 +1,17 @@
-// import React from 'react';
-
 import { useState, useEffect } from 'react';
-import { Container, Col, Dropdown, Form } from 'react-bootstrap';
+import { Container, Dropdown, Form } from 'react-bootstrap';
 import axios from 'axios';
 import './Category.css';
 
-const FilterCategories = () => {
-  const [categories, setCategories] = useState([]);
+// Added handleCheck and selectedCategories as props
+const FilterCategories = ({ handleCheck, selectedCategories }) => {
+  const [recipes, setRecipes] = useState([]);
 
   const fetchData = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API}/categories`);
+      const res = await axios.get(`${import.meta.env.VITE_API}/recipes`);
       const data = res.data;
-      setCategories(data);
+      setRecipes(data);
     } catch (err) {
       console.error('Error fetching data: ', err);
     }
@@ -22,7 +21,14 @@ const FilterCategories = () => {
     fetchData();
   }, []);
 
-  // const
+  // Get unique categories
+  const categories = [
+    ...new Set(
+      recipes.flatMap((recipe) =>
+        Array.isArray(recipe.category) ? recipe.category : [recipe.category]
+      )
+    ),
+  ];
 
   return (
     <>
@@ -35,16 +41,22 @@ const FilterCategories = () => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                {categories.map((category, index) => (
-                  <Dropdown.Item as="div" key={index}>
-                    <Form.Check
-                      className="form-check no-line-through"
-                      type="checkbox"
-                      id={category.id}
-                      label={category.type}
-                    />
-                  </Dropdown.Item>
-                ))}
+                {categories.map(
+                  (category, index) =>
+                    category && (
+                      <Dropdown.Item as="div" key={index}>
+                        {/* Added onChange and checked attributes to Form.Check */}
+                        <Form.Check
+                          className="form-check no-line-through"
+                          type="checkbox"
+                          id={`category-${index}`}
+                          label={category}
+                          onChange={() => handleCheck(category)}
+                          checked={selectedCategories.includes(category)}
+                        />
+                      </Dropdown.Item>
+                    )
+                )}
               </Dropdown.Menu>
             </Dropdown>
           </div>

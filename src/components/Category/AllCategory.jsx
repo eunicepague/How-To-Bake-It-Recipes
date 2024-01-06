@@ -2,10 +2,21 @@ import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import './Category.css';
 
-const AllCategory = ({ recipes }) => {
+// Added selectedCategories as a prop
+const AllCategory = ({ recipes, selectedCategories }) => {
+  // Added filteredRecipes to filter the recipes based on selectedCategories
+  const filteredRecipes = selectedCategories.length
+    ? recipes.filter((recipe) =>
+        selectedCategories.every((category) =>
+          recipe.category.includes(category)
+        )
+      )
+    : recipes;
+
   return (
     <Row className="categorys-all-container">
-      {recipes.map((recipe) => (
+      {/* Use filteredRecipes instead of recipes */}
+      {filteredRecipes.map((recipe) => (
         <Col
           key={recipe.id}
           className="categorys-all-content"
