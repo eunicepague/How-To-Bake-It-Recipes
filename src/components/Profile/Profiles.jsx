@@ -1,4 +1,3 @@
-// import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -33,6 +32,7 @@ const Profiles = () => {
 
   useEffect(() => {
     fetchRecipe();
+    window.scrollTo(0, 0);
   }, [id]);
 
   return (

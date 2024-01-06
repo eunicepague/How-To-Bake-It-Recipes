@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Recipe from './Recipe';
 
@@ -30,6 +30,7 @@ const Desserts = () => {
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
+
   return (
     <Container className="home-container">
       <section className="home-content">
