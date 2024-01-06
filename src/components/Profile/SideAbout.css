@@ -1,0 +1,55 @@
+.side-container {
+  display: flex;
+}
+
+#side-img-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.side-blk-line {
+  content: '';
+  display: flex;
+  width: 100%;
+  margin: 2rem 0;
+  height: 2px;
+  background-color: currentColor;
+  order: 0;
+  flex-grow: 1;
+}
+
+.side-intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-intro h1 {
+  font-weight: bold;
+}
+
+.side-intro h5 {
+  margin: 0.5rem 0;
+}
+
+#side-btn {
+  background-color: black;
+  border-color: black;
+  margin-top: 1rem;
+  width: 10rem;
+  height: 3rem;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+#side-icons-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+#side-icons-container img {
+  display: flex;
+  width: 2rem;
+}

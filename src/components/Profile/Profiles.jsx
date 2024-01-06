@@ -13,6 +13,7 @@ import Instruction from './sections/Instruction';
 import Nutrition from './sections/Nutrition';
 
 import About from './../About/About';
+import SideAbout from './SideAbout';
 import Related from '../Home/sections/Related';
 import RelatedRecipe from '../Home/sections/RelatedRecipe';
 
@@ -67,7 +68,7 @@ const Profiles = () => {
             lg={4}
             className="d-sm-none d-lg-flex profile-about"
           >
-            <About />
+            <SideAbout />
           </Col>
         </Row>
 
