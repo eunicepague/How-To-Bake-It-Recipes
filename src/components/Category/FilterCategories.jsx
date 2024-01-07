@@ -3,6 +3,8 @@ import { Container, Dropdown, Form } from 'react-bootstrap';
 import axios from 'axios';
 import './Category.css';
 
+import FilterBar from './FilterBar';
+
 // Added handleCheck and selectedCategories as props
 const FilterCategories = ({ handleCheck, selectedCategories }) => {
   const [recipes, setRecipes] = useState([]);
@@ -34,9 +36,13 @@ const FilterCategories = ({ handleCheck, selectedCategories }) => {
     <>
       <Container className="filterCategories-container">
         <section className="filterCategories-content">
+          <FilterBar />
+
           <div>
             <Dropdown autoClose="outside">
-              <Dropdown.Toggle id="dropdown-basic">Category</Dropdown.Toggle>
+              <Dropdown.Toggle id="dropdown-basic" className="custom-dropdown">
+                Category
+              </Dropdown.Toggle>
 
               <Dropdown.Menu>
                 {categories.map(

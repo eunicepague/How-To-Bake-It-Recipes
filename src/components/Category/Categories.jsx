@@ -7,6 +7,7 @@ import AllCategory from './AllCategory';
 import CategoriesIntro from './CategoriesIntro';
 import Related from './../Home/sections/Related';
 import FilterCategories from './FilterCategories';
+import FilterBar from './FilterBar';
 
 const Categories = () => {
   const [recipes, setRecipies] = useState([]);
