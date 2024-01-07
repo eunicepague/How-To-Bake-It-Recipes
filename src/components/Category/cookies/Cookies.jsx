@@ -27,7 +27,7 @@ const Cookies = () => {
 
   return (
     <>
-      <Container fluid className="categorys-container">
+      <Container className="categorys-container">
         <section className="categorys-content">
           <CookiesIntro categoryRecipes={recipes} />
           <div className="category-blk-line"></div>

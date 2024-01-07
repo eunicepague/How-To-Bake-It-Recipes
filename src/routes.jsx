@@ -24,33 +24,68 @@ const routes = [
     path: '/category',
     element: <Categories />,
   },
+
   {
     path: '/category/cakes',
     element: <Cakes />,
   },
   {
+    path: '/category/cakes/:id',
+    element: <Profiles />,
+  },
+
+  {
     path: '/category/cookies',
-    element: <Cakes />,
+    element: <Cookies />,
   },
   {
-    path: '/category/pies',
-    element: <Cobblers />,
+    path: '/category/cookies/:id',
+    element: <Profiles />,
   },
-  {
-    path: '/category/desserts',
-    element: <Desserts />,
-  },
+
   {
     path: '/category/cobblers',
     element: <Cobblers />,
   },
   {
+    path: '/category/pies/:id',
+    element: <Profiles />,
+  },
+
+  {
+    path: '/category/pies',
+    element: <Cobblers />,
+  },
+  {
+    path: '/category/pies/:id',
+    element: <Profiles />,
+  },
+
+  {
+    path: '/category/desserts',
+    element: <Desserts />,
+  },
+  {
+    path: '/category/desserts/:id',
+    element: <Profiles />,
+  },
+
+  {
     path: '/category/frostings',
     element: <Frostings />,
   },
   {
+    path: '/category/frostings/:id',
+    element: <Profiles />,
+  },
+
+  {
     path: '/category/icecreams',
     element: <IceCreams />,
+  },
+  {
+    path: '/category/icecreams/:id',
+    element: <Profiles />,
   },
 ];
 

@@ -21,7 +21,13 @@ const AllCategory = ({ recipes, selectedCategories }) => {
           md={3}
           lg={3}
         >
-          <Link to={`/category/${recipe.category}/${recipe.id}`}>
+          <Link
+            to={`/category/${
+              Array.isArray(recipe.category)
+                ? recipe.category.join(',').toLowerCase()
+                : recipe.category.toLowerCase()
+            }/${recipe.id}`}
+          >
             <img src={recipe.image[0]} />
             <h6>{recipe.title}</h6>
           </Link>

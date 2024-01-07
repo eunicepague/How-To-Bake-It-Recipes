@@ -30,6 +30,7 @@ const Desserts = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <>
       <Container className="categorys-container">
