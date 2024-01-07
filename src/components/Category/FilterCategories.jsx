@@ -1,3 +1,4 @@
+// FilterCategories.js
 import { useState, useEffect } from 'react';
 import { Container, Dropdown, Form } from 'react-bootstrap';
 import axios from 'axios';
@@ -5,15 +6,21 @@ import './Category.css';
 
 import FilterBar from './FilterBar';
 
-// Added handleCheck and selectedCategories as props
-const FilterCategories = ({ handleCheck, selectedCategories }) => {
+const FilterCategories = ({
+  handleCheck,
+  selectedCategories,
+  handleSearch,
+  handleReset,
+}) => {
   const [recipes, setRecipes] = useState([]);
+  const [filteredRecipes, setFilteredRecipes] = useState([]);
 
   const fetchData = async () => {
     try {
       const res = await axios.get(`${import.meta.env.VITE_API}/recipes`);
       const data = res.data;
       setRecipes(data);
+      setFilteredRecipes(data);
     } catch (err) {
       console.error('Error fetching data: ', err);
     }
@@ -23,10 +30,9 @@ const FilterCategories = ({ handleCheck, selectedCategories }) => {
     fetchData();
   }, []);
 
-  // Get unique categories
   const categories = [
     ...new Set(
-      recipes.flatMap((recipe) =>
+      filteredRecipes.flatMap((recipe) =>
         Array.isArray(recipe.category) ? recipe.category : [recipe.category]
       )
     ),
@@ -36,20 +42,17 @@ const FilterCategories = ({ handleCheck, selectedCategories }) => {
     <>
       <Container className="filterCategories-container">
         <section className="filterCategories-content">
-          <FilterBar />
-
+          <FilterBar handleSearch={handleSearch} handleReset={handleReset} />
           <div>
             <Dropdown autoClose="outside">
               <Dropdown.Toggle id="dropdown-basic" className="custom-dropdown">
                 Category
               </Dropdown.Toggle>
-
               <Dropdown.Menu>
                 {categories.map(
                   (category, index) =>
                     category && (
                       <Dropdown.Item as="div" key={index}>
-                        {/* Added onChange and checked attributes to Form.Check */}
                         <Form.Check
                           className="form-check no-line-through"
                           type="checkbox"

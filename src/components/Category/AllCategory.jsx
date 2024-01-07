@@ -4,14 +4,10 @@ import './Category.css';
 
 // Added selectedCategories as a prop
 const AllCategory = ({ recipes, selectedCategories }) => {
-  // Added filteredRecipes to filter the recipes based on selectedCategories
-  const filteredRecipes = selectedCategories.length
-    ? recipes.filter((recipe) =>
-        selectedCategories.every((category) =>
-          recipe.category.includes(category)
-        )
-      )
-    : recipes;
+  // Filter the recipes based on the selected categories
+  const filteredRecipes = recipes.filter((recipe) =>
+    selectedCategories.every((category) => recipe.category.includes(category))
+  );
 
   return (
     <Row className="categorys-all-container">
