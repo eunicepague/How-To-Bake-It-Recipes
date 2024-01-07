@@ -1,3 +1,4 @@
+import Hero from './sections/Hero';
 import Category from './sections/Category';
 import Cookies from './sections/Cookies';
 import Cakes from './sections/Cakes';
@@ -11,6 +12,7 @@ import About from './../About/About';
 const Home = () => {
   return (
     <>
+      <Hero />
       <Category />
       <Cookies />
       <Cakes />

@@ -1,3 +1,12 @@
+/* --------HERO------------- */
+
+.hero-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* --------cat-containers */
 .home-container {
   display: flex;
   justify-content: center;

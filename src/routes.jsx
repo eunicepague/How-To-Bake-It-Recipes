@@ -84,7 +84,7 @@ const routes = [
     element: <IceCreams />,
   },
   {
-    path: '/category/icecreams/:id',
+    path: '/category/ice cream/:id',
     element: <Profiles />,
   },
 ];
