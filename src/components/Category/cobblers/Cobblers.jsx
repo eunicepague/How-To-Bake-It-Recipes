@@ -35,7 +35,10 @@ const Cobblers = () => {
       <section className="categorys-content">
         <CobblersIntro categoryRecipes={recipes} />
         <div className="category-blk-line"></div>
-        <AllCategory recipes={recipes} />
+        <AllCategory
+          recipes={recipes}
+          selectedCategories={['Pies', 'Cobblers']}
+        />
       </section>
     </Container>
   );

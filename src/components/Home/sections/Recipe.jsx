@@ -12,7 +12,7 @@ const Recipe = ({ recipes }) => (
         md={3}
         lg={3}
       >
-        <Link to={`/profiles/${recipe.id}`}>
+        <Link to={`/category/${recipe.category}/${recipe.id}`}>
           <div className="home-img-content">
             <img src={recipe.image[0]} alt={recipe.title} />
             <h5>{recipe.title}</h5>

@@ -21,14 +21,6 @@ const routes = [
     element: <About />,
   },
   {
-    path: '/profiles/:id',
-    element: <Profiles />,
-  },
-  {
-    path: '/profiles',
-    element: <ProfileList />,
-  },
-  {
     path: '/category',
     element: <Categories />,
   },
@@ -37,16 +29,20 @@ const routes = [
     element: <Cakes />,
   },
   {
+    path: '/category/cookies',
+    element: <Cakes />,
+  },
+  {
     path: '/category/pies',
     element: <Cobblers />,
   },
   {
-    path: '/category/cobblers',
-    element: <Cobblers />,
+    path: '/category/desserts',
+    element: <Desserts />,
   },
   {
-    path: '/category/cookies',
-    element: <Cookies />,
+    path: '/category/cobblers',
+    element: <Cobblers />,
   },
   {
     path: '/category/frostings',
@@ -55,10 +51,6 @@ const routes = [
   {
     path: '/category/icecreams',
     element: <IceCreams />,
-  },
-  {
-    path: '/category/desserts',
-    element: <Desserts />,
   },
 ];
 

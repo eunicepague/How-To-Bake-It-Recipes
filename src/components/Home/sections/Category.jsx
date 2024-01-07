@@ -1,3 +1,4 @@
+// Category.js
 import { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
@@ -41,7 +42,7 @@ const Category = () => {
                 onClick={scrollToTop}
               >
                 <div className="category-img-content">
-                  <img src={category.images} />
+                  <img src={category.images} alt={category.type} />
                   <h6>{category.type}</h6>
                 </div>
               </Link>

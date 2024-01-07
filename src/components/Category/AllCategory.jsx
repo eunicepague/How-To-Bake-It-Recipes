@@ -6,7 +6,7 @@ import './Category.css';
 const AllCategory = ({ recipes, selectedCategories }) => {
   // Filter the recipes based on the selected categories
   const filteredRecipes = recipes.filter((recipe) =>
-    selectedCategories.every((category) => recipe.category.includes(category))
+    selectedCategories.some((category) => recipe.category.includes(category))
   );
 
   return (
@@ -21,7 +21,7 @@ const AllCategory = ({ recipes, selectedCategories }) => {
           md={3}
           lg={3}
         >
-          <Link to={`/profiles/${recipe.id}`}>
+          <Link to={`/category/${recipe.category}/${recipe.id}`}>
             <img src={recipe.image[0]} />
             <h6>{recipe.title}</h6>
           </Link>

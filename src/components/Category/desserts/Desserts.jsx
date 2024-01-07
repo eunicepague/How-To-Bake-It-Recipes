@@ -36,7 +36,10 @@ const Desserts = () => {
         <section className="categorys-content">
           <DessertsIntro categoryRecipes={recipes} />
           <div className="category-blk-line"></div>
-          <AllCategory recipes={recipes} />
+          <AllCategory
+            recipes={recipes}
+            selectedCategories={['Desserts', 'Chocolates', 'Cupcakes']}
+          />
         </section>
       </Container>
 

@@ -31,7 +31,7 @@ const Cookies = () => {
         <section className="categorys-content">
           <CookiesIntro categoryRecipes={recipes} />
           <div className="category-blk-line"></div>
-          <AllCategory recipes={recipes} />
+          <AllCategory recipes={recipes} selectedCategories={['Cookies']} />
         </section>
       </Container>
 

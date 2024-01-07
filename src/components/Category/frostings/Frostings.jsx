@@ -27,12 +27,11 @@ const Frostings = () => {
   }, []);
   return (
     <>
-      {' '}
       <Container className="categorys-container">
         <section className="categorys-content">
           <FrostingsIntro categoryRecipes={recipes} />
           <div className="category-blk-line"></div>
-          <AllCategory recipes={recipes} />
+          <AllCategory recipes={recipes} selectedCategories={['Frostings']} />
         </section>
       </Container>
       <Related />

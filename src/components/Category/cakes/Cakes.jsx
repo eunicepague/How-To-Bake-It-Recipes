@@ -32,7 +32,7 @@ const Cakes = () => {
         <section className="categorys-content">
           <CakeIntro categoryRecipes={recipes} />
           <div className="category-blk-line"></div>
-          <AllCategory recipes={recipes} />
+          <AllCategory recipes={recipes} selectedCategories={['Cakes']} />
         </section>
       </Container>
       <Related />

@@ -31,7 +31,7 @@ const IceCreams = () => {
         <section className="categorys-content">
           <IceCreamsIntro categoryRecipes={recipes} />
           <div className="category-blk-line"></div>
-          <AllCategory recipes={recipes} />
+          <AllCategory recipes={recipes} selectedCategories={['Ice Cream']} />
         </section>
       </Container>
 
