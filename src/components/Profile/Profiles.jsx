@@ -16,6 +16,7 @@ import SideAbout from './SideAbout';
 import Related from '../Home/sections/Related';
 import RelatedRecipe from '../Home/sections/RelatedRecipe';
 import SideLatest from './SideLatest';
+import Comments from './comments/Comments';
 
 const Profiles = () => {
   const { id } = useParams();
@@ -79,6 +80,7 @@ const Profiles = () => {
 
         <About />
         <Related recipes={RelatedRecipe} />
+        <Comments recipeId={id} />
       </section>
     </Container>
   );
