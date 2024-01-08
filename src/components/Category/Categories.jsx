@@ -48,28 +48,54 @@ const Categories = () => {
     setSelectedCategories([]);
   };
 
+  // for the filter bar
   useEffect(() => {
+    // Start with all recipes
     let filtered = recipes;
 
+    // If there's a search term, filter the recipes
     if (searchTerm) {
-      filtered = filtered.filter(
-        (recipe) =>
+      filtered = filtered.filter((recipe) => {
+        // Check if the recipe title includes the search term
+        const titleMatch =
           recipe.title &&
-          typeof recipe.title === 'string' &&
-          recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+          recipe.title.toLowerCase().includes(searchTerm.toLowerCase());
+
+        // Initialize categoryMatch as false
+        let categoryMatch = false;
+
+        // If the recipe category is an array, join it into a string and check if it includes the search term
+        if (Array.isArray(recipe.category)) {
+          categoryMatch = recipe.category
+            .join(' ')
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase());
+        }
+        // If the recipe category is a string, check if it includes the search term
+        else if (typeof recipe.category === 'string') {
+          categoryMatch = recipe.category
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase());
+        }
+
+        // Return true if either titleMatch or categoryMatch is true
+        return titleMatch || categoryMatch;
+      });
     }
 
+    // If there are selected categories, filter the recipes
     if (selectedCategories.length > 0) {
       filtered = filtered.filter((recipe) =>
+        // Check if all selected categories are included in the recipe category
         selectedCategories.every((category) =>
           recipe.category.includes(category)
         )
       );
     }
 
+    // Update the state with the filtered recipes
     setFilteredRecipes(filtered);
-  }, [searchTerm, selectedCategories]);
+  }, [searchTerm, selectedCategories]); // This useEffect hook depends on searchTerm and selectedCategories, so it will run every time either of them changes
 
   return (
     <>
