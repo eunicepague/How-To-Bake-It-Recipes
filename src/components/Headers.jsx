@@ -8,6 +8,11 @@ import Logo from './../assets/logo.png';
 import './Headers.css';
 
 const Headers = () => {
+  // ScrollToTop
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Navbar expand="lg" sticky="top" className="navbar">
       <Container>
@@ -20,13 +25,13 @@ const Headers = () => {
           className="justify-content-center"
         >
           <Nav className="nav">
-            <Nav.Link as={Link} to="/">
+            <Nav.Link as={Link} to="/" onClick={scrollToTop}>
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/about">
+            <Nav.Link as={Link} to="/about" onClick={scrollToTop}>
               About
             </Nav.Link>
-            <Nav.Link as={Link} to="/category">
+            <Nav.Link as={Link} to="/category" onClick={scrollToTop}>
               Menu
             </Nav.Link>
           </Nav>
