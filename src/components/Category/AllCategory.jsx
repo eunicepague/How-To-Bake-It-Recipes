@@ -29,7 +29,7 @@ const AllCategory = ({ recipes, selectedCategories }) => {
           <Link
             to={`/category/${
               Array.isArray(recipe.category)
-                ? recipe.category.join(',').toLowerCase()
+                ? recipe.category[0].toLowerCase() // Use the first category instead of joining all
                 : recipe.category.toLowerCase()
             }/${recipe.id}`}
           >

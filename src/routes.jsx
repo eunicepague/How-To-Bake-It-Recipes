@@ -48,6 +48,10 @@ const routes = [
     element: <Cobblers />,
   },
   {
+    path: '/category/cobblers/:id',
+    element: <Profiles />,
+  },
+  {
     path: '/category/pies/:id',
     element: <Profiles />,
   },
