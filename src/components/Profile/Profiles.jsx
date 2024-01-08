@@ -15,6 +15,7 @@ import About from './../About/About';
 import SideAbout from './SideAbout';
 import Related from '../Home/sections/Related';
 import RelatedRecipe from '../Home/sections/RelatedRecipe';
+import SideLatest from './SideLatest';
 
 const Profiles = () => {
   const { id } = useParams();
@@ -68,7 +69,11 @@ const Profiles = () => {
             lg={4}
             className="d-sm-none d-lg-flex profile-about"
           >
-            <SideAbout />
+            <Col>
+              <SideAbout />
+
+              <SideLatest />
+            </Col>
           </Col>
         </Row>
 

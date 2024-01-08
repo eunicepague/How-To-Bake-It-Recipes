@@ -1,5 +1,6 @@
 .side-container {
   display: flex;
+  padding-top: 1rem;
 }
 
 #side-img-content img {
@@ -52,4 +53,40 @@
 #side-icons-container img {
   display: flex;
   width: 2rem;
+}
+
+/* ---------SIDELATEST----------- */
+
+.latest-container {
+  display: flex;
+  flex-direction: row; /* Change from column to row */
+  flex-wrap: wrap; /* Add this line to allow the items to wrap to the next line */
+}
+
+#latest-img-content {
+  flex: 1 0 50%; /* Change from flex: 1 to flex: 1 0 50% to make each item take up half of the row */
+  width: 100%;
+  height: 250px;
+  padding: 2rem 1rem;
+}
+
+#latest-img-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#latest-img-content h6 {
+  text-align: center;
+}
+
+/* ---------LINK--------- */
+#latest-img-content a {
+  color: inherit; /* Changes the link color to the color of the parent element */
+  text-decoration: none; /* Removes the underline */
+}
+
+#latest-img-content a:hover {
+  color: inherit; /* Keeps the link color the same even when hovered */
+  text-decoration: none; /* Keeps the underline removed even when hovered */
 }
