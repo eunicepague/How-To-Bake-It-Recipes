@@ -4,6 +4,34 @@
   min-height: 100vh;
 }
 
+.comments-content {
+  width: 100%;
+}
+
+#comments-form {
+  width: 60%;
+  margin-top: 2rem;
+}
+
 .comments-box-container {
   border: 1px solid black;
+  padding: 1rem;
+}
+
+.comments-commentSection {
+  margin: 4rem 0;
+  width: 60%;
+}
+
+#comments-submit-btn {
+  width: 10rem;
+  height: 3rem;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border-color: black;
+}
+
+#comments-comment {
+  margin-top: 2rem;
 }

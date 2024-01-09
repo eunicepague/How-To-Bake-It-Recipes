@@ -78,7 +78,7 @@ const Profiles = () => {
           </Col>
         </Row>
 
-        <About />
+        {/* <About /> */}
         <Related recipes={RelatedRecipe} />
         <Comments recipeId={id} />
       </section>

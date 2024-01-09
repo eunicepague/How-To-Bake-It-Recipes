@@ -19,13 +19,12 @@ const Comments = ({ recipeId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${import.meta.env.VITE_PHP}/comments`, {
+      await axios.post(`${import.meta.env.VITE_PHP}`, {
         ...formData,
-        recipeId, // use the recipeId prop here
+        category: recipeId,
       });
-      console.log(res.data);
-      //update the comments state with new comment
-      setComments([...comments, res.data]);
+      // Fetch comments again after posting a new comment
+      fetchData();
     } catch (err) {
       console.error(err);
     }
@@ -34,7 +33,7 @@ const Comments = ({ recipeId }) => {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_PHP}/comments?recipeId=${recipeId}`
+        `${import.meta.env.VITE_PHP}?category=${recipeId}`
       );
       setComments(res.data);
     } catch (err) {
@@ -56,14 +55,14 @@ const Comments = ({ recipeId }) => {
               Your email address will not be published. Required fields are
               marked *
             </p>
-            <div>
+            {/* <div>
               <p>Recipe Review</p>
               <p>stars</p>
-            </div>
+            </div> */}
 
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} id="comments-form">
               <div>
-                <p>Comments</p>
+                <h6>Comments</h6>
                 <Form.Group
                   className="mb-3"
                   controlId="exampleForm.ControlTextarea1"
@@ -79,10 +78,10 @@ const Comments = ({ recipeId }) => {
               </div>
 
               <div>
-                <p>Name</p>
+                <h6>Name</h6>
                 <Form.Group
                   className="mb-3"
-                  controlId="exampleForm.ControlInput1"
+                  controlId="exampleForm.ControlName"
                 >
                   <Form.Control
                     type="text"
@@ -94,10 +93,10 @@ const Comments = ({ recipeId }) => {
               </div>
 
               <div>
-                <p>Email</p>
+                <h6>Email</h6>
                 <Form.Group
                   className="mb-3"
-                  controlId="exampleForm.ControlInput1"
+                  controlId="exampleForm.ControlEmail"
                 >
                   <Form.Control
                     type="email"
@@ -108,26 +107,26 @@ const Comments = ({ recipeId }) => {
                 </Form.Group>
               </div>
 
-              <button type="submit">Post Comment</button>
+              <button type="submit" id="comments-submit-btn">
+                Post Comment
+              </button>
             </Form>
           </Col>
         </Row>
 
-        <Row>
-          <Col>
-            <h1>{comments.length} comments</h1>
-            {comments
-              .slice()
-              .reverse()
-              .map((comment, index) => (
-                <div key={index} className="comments-box-container">
-                  <p>{comment.name}</p>
-                  <p>{new Date(comment.created_at).toLocaleString()}</p>
-                  <p>{comment.comment}</p>
-                </div>
-              ))}
-          </Col>
-        </Row>
+        <div className="comments-commentSection">
+          <h2 style={{ fontWeight: 'bold' }}>{comments.length} comments</h2>
+          {comments
+            .slice()
+            .reverse()
+            .map((comment, index) => (
+              <div key={index} className="comments-box-container">
+                <h3>{comment.name}</h3>
+                <p>{new Date(comment.created_at).toLocaleString()}</p>
+                <p id="comments-comment">{comment.comment}</p>
+              </div>
+            ))}
+        </div>
       </section>
     </Container>
   );
