@@ -34,6 +34,12 @@ const Headers = () => {
             <Nav.Link as={Link} to="/category" onClick={scrollToTop}>
               Menu
             </Nav.Link>
+            <Nav.Link as={Link} to="/register" onClick={scrollToTop}>
+              Sigin
+            </Nav.Link>
+            <Nav.Link as={Link} to="/login" onClick={scrollToTop}>
+              Login
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

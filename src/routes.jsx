@@ -1,7 +1,7 @@
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Profiles from './components/Profile/Profiles';
-import ProfileList from './components/Profile/ProfileList';
+// import ProfileList from './components/Profile/ProfileList';
 import Categories from './components/Category/Categories';
 
 import Cakes from './components/Category/cakes/Cakes';
@@ -10,6 +10,9 @@ import Cookies from './components/Category/cookies/Cookies';
 import Frostings from './components/Category/frostings/Frostings';
 import IceCreams from './components/Category/icecreams/IceCreams';
 import Desserts from './components/Category/desserts/Desserts';
+
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
 
 const routes = [
   {
@@ -90,6 +93,14 @@ const routes = [
   {
     path: '/category/ice cream/:id',
     element: <Profiles />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
+  },
+  {
+    path: '/login',
+    element: <Login />,
   },
 ];
 
