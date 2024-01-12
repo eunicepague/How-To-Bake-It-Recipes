@@ -3,9 +3,12 @@ import { Routes, Route } from 'react-router-dom';
 import Headers from './components/Headers';
 import routes from './routes';
 import Loaders from './components/Loaders';
+import { UserContext } from './components/UserContext';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
 
   useEffect(() => {
     // Simulate a data fetching function
@@ -27,21 +30,25 @@ function App() {
 
   return (
     <>
-      <Headers />
-      <main>
-        <Routes>
-          {routes.map((route, index) => {
-            return (
-              <Route
-                key={index}
-                path={route.path}
-                element={route.element}
-                exact
-              />
-            );
-          })}
-        </Routes>
-      </main>
+      <UserContext.Provider
+        value={{ isLoggedIn, setIsLoggedIn, username, setUsername }}
+      >
+        <Headers />
+        <main>
+          <Routes>
+            {routes.map((route, index) => {
+              return (
+                <Route
+                  key={index}
+                  path={route.path}
+                  element={route.element}
+                  exact
+                />
+              );
+            })}
+          </Routes>
+        </main>
+      </UserContext.Provider>
     </>
   );
 }

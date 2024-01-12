@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Container, Row, Col, Form, Button, InputGroup } from 'react-bootstrap';
 import axios from 'axios';
-import './Register.css';
+// import './Register.css';
 
 const Register = () => {
   const [validated, setValidated] = useState(false);
@@ -71,8 +71,8 @@ const Register = () => {
   };
 
   return (
-    <Container className="login-container">
-      <section className="login-content">
+    <Container className="register-container">
+      <section className="register-content">
         <Row>
           <Col lg={6}>
             <div>
@@ -83,7 +83,7 @@ const Register = () => {
                 noValidate
                 validated={validated && passwordMatch}
                 onSubmit={handleSubmit}
-                className="login-form"
+                className="register-form"
               >
                 <Col>
                   <Row>

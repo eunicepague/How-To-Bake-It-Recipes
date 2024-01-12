@@ -21,3 +21,9 @@
   display: flex;
   gap: 40px;
 }
+
+.login-register {
+  display: flex;
+  position: absolute;
+  right: 10rem;
+}

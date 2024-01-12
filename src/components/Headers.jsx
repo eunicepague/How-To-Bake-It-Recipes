@@ -1,13 +1,24 @@
+import { useContext, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
+import { UserContext } from './UserContext';
 
 import Logo from './../assets/logo.png';
 
 import './Headers.css';
 
 const Headers = () => {
+  const { isLoggedIn, username, setIsLoggedIn, setUsername } =
+    useContext(UserContext);
+
+  const logout = () => {
+    //clear user session
+    setIsLoggedIn(false);
+    setUsername('');
+  };
+
   // ScrollToTop
   const scrollToTop = () => {
     window.scrollTo(0, 0);
@@ -34,12 +45,31 @@ const Headers = () => {
             <Nav.Link as={Link} to="/category" onClick={scrollToTop}>
               Menu
             </Nav.Link>
-            <Nav.Link as={Link} to="/register" onClick={scrollToTop}>
-              Sigin
+            <Nav.Link as={Link} to="/category" onClick={scrollToTop}>
+              Saved Recipes
             </Nav.Link>
-            <Nav.Link as={Link} to="/login" onClick={scrollToTop}>
-              Login
-            </Nav.Link>
+
+            <span className="login-register">
+              {isLoggedIn ? (
+                <>
+                  <Nav.Link as={Link} to="/profile" onClick={scrollToTop}>
+                    {username}
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/" onClick={logout}>
+                    Logout
+                  </Nav.Link>
+                </>
+              ) : (
+                <>
+                  <Nav.Link as={Link} to="/register" onClick={scrollToTop}>
+                    Register
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/login" onClick={scrollToTop}>
+                    Login
+                  </Nav.Link>
+                </>
+              )}
+            </span>
           </Nav>
         </Navbar.Collapse>
       </Container>
