@@ -1,7 +1,46 @@
 // import React from 'react';
+import { useState } from 'react';
 import { Container, Row, Col, Form, InputGroup } from 'react-bootstrap';
+import axios from 'axios';
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        import.meta.env.VITE_LOGIN,
+        {
+          email: email,
+          password: password,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        console.log(response.data);
+      } else {
+        console.error('Failed to login');
+      }
+    } catch (error) {
+      console.error('An unexpected error happened: ', error);
+    }
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
   return (
     <>
       <Container className="login-container">
@@ -9,7 +48,7 @@ const Login = () => {
           <Row>
             <Col lg={6}>
               <div>
-                <Form className="login-form">
+                <Form onSubmit={handleSubmit} className="login-form">
                   <Col>
                     {/* Email */}
                     <Form.Group as={Col} controlId="validationEmail">
@@ -20,6 +59,8 @@ const Login = () => {
                           placeholder="Email"
                           aria-describedby="inputGroupPrepend"
                           required
+                          value={email}
+                          onChange={handleEmailChange}
                         />
                       </InputGroup>
                     </Form.Group>
@@ -32,6 +73,8 @@ const Login = () => {
                         placeholder="Password"
                         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
                         title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                        value={password}
+                        onChange={handlePasswordChange}
                       />
                       <Form.Control.Feedback type="invalid">
                         Must contain at least one number and one uppercase and
