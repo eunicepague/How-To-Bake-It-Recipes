@@ -13,6 +13,7 @@ import Desserts from './components/Category/desserts/Desserts';
 
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
+import Saved from './components/Saved/Saved';
 
 const routes = [
   {
@@ -101,6 +102,10 @@ const routes = [
   {
     path: '/login',
     element: <Login />,
+  },
+  {
+    path: '/saved-recipes',
+    element: <Saved />,
   },
 ];
 

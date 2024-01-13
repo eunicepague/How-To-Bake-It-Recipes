@@ -13,6 +13,7 @@ const Headers = () => {
 
   const logout = () => {
     //clear user session
+    alert('You have successfully logged out!');
     setIsLoggedIn(false);
     setUsername('');
 
@@ -75,11 +76,11 @@ const Headers = () => {
                 </>
               ) : (
                 <>
-                  <Nav.Link as={Link} to="/register" onClick={scrollToTop}>
-                    Register
-                  </Nav.Link>
                   <Nav.Link as={Link} to="/login" onClick={scrollToTop}>
                     Login
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/register" onClick={scrollToTop}>
+                    Register
                   </Nav.Link>
                 </>
               )}

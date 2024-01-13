@@ -5,10 +5,12 @@ import axios from 'axios';
 import './Comments.css';
 
 const Comments = ({ recipeId }) => {
+  const user = JSON.parse(localStorage.getItem('user'));
+
   const [comments, setComments] = useState([]);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    name: user ? user.username : '',
+    email: user ? user.email : '',
     comment: '',
   });
 
@@ -50,11 +52,8 @@ const Comments = ({ recipeId }) => {
       <section className="comments-content">
         <Row>
           <Col>
-            <h1>Leave a comment</h1>
-            <p>
-              Your email address will not be published. Required fields are
-              marked *
-            </p>
+            <h1>Leave a comment.</h1>
+
             {/* <div>
               <p>Recipe Review</p>
               <p>stars</p>
@@ -73,6 +72,7 @@ const Comments = ({ recipeId }) => {
                     name="comment"
                     value={formData.comment}
                     onChange={handleChange}
+                    disabled={!user}
                   />
                 </Form.Group>
               </div>
@@ -88,6 +88,7 @@ const Comments = ({ recipeId }) => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
+                    disabled
                   />
                 </Form.Group>
               </div>
@@ -103,7 +104,9 @@ const Comments = ({ recipeId }) => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    disabled
                   />
+                  {!user && <p>You need to Log in or register to comment! </p>}{' '}
                 </Form.Group>
               </div>
 
