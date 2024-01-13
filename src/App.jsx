@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Headers from './components/Headers';
 import routes from './routes';
@@ -11,22 +11,31 @@ function App() {
   const [username, setUsername] = useState('');
 
   useEffect(() => {
-    // Simulate a data fetching function
-    const fetchData = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 2000)); // Wait for 2 seconds
-      setIsLoading(false); // Set loading to false when data is ready
-    };
+    const user = JSON.parse(localStorage.getItem('user'));
 
-    fetchData();
-  }, []); // Empty dependency array means this effect runs once on mount.
+    if (user) {
+      setIsLoggedIn(true);
+      setUsername(user.username);
+    }
+  }, []);
 
-  if (isLoading) {
-    return (
-      <>
-        <Loaders />
-      </>
-    );
-  }
+  // useEffect(() => {
+
+  //   const fetchData = async () => {
+  //     await new Promise((resolve) => setTimeout(resolve, 2000));
+  //     setIsLoading(false);
+
+  //     fetchData();
+  //   };
+  // }, []);
+
+  // if (isLoading) {
+  //   return (
+  //     <>
+  //       <Loaders />
+  //     </>
+  //   );
+  // }
 
   return (
     <>

@@ -15,6 +15,9 @@ const Headers = () => {
     //clear user session
     setIsLoggedIn(false);
     setUsername('');
+
+    //Clear the user's login state from local storage
+    localStorage.removeItem('user');
   };
 
   // ScrollToTop
@@ -43,15 +46,14 @@ const Headers = () => {
             <Nav.Link as={Link} to="/category" onClick={scrollToTop}>
               Menu
             </Nav.Link>
-            {/* <Nav.Link as={Link} to="/category" onClick={scrollToTop}>
-              Saved Recipes
-            </Nav.Link> */}
 
             <span className="login-register">
               {isLoggedIn ? (
                 <>
                   <NavDropdown
-                    title={`Hello, ${username}!`}
+                    title={`Hello, ${
+                      username.charAt(0).toUpperCase() + username.slice(1)
+                    }!`}
                     id="basic-nav-dropdown"
                   >
                     <NavDropdown.Item as={Link} to="/" onClick={logout}>
