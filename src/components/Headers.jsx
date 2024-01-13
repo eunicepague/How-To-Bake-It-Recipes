@@ -1,7 +1,5 @@
-import { useContext, useState } from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { useContext } from 'react';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { UserContext } from './UserContext';
 
@@ -45,19 +43,33 @@ const Headers = () => {
             <Nav.Link as={Link} to="/category" onClick={scrollToTop}>
               Menu
             </Nav.Link>
-            <Nav.Link as={Link} to="/category" onClick={scrollToTop}>
+            {/* <Nav.Link as={Link} to="/category" onClick={scrollToTop}>
               Saved Recipes
-            </Nav.Link>
+            </Nav.Link> */}
 
             <span className="login-register">
               {isLoggedIn ? (
                 <>
+                  <NavDropdown
+                    title={`Hello, ${username}!`}
+                    id="basic-nav-dropdown"
+                  >
+                    <NavDropdown.Item as={Link} to="/" onClick={logout}>
+                      Logout
+                    </NavDropdown.Item>
+                  </NavDropdown>
+
                   <Nav.Link as={Link} to="/profile" onClick={scrollToTop}>
+                    Saved Recipes
+                  </Nav.Link>
+
+                  {/* <Nav.Link as={Link} to="/profile" onClick={scrollToTop}>
                     {username}
-                  </Nav.Link>
-                  <Nav.Link as={Link} to="/" onClick={logout}>
+                  </Nav.Link> */}
+
+                  {/* <Nav.Link as={Link} to="/" onClick={logout}>
                     Logout
-                  </Nav.Link>
+                  </Nav.Link> */}
                 </>
               ) : (
                 <>

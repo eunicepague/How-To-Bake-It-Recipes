@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Container, Row, Col, Form, Button, InputGroup } from 'react-bootstrap';
+import { Container, Row, Col, Form, InputGroup } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-// import './Register.css';
+import './Register.css';
 
 const Register = () => {
   const [validated, setValidated] = useState(false);
@@ -26,6 +27,8 @@ const Register = () => {
   const handleConfirmPasswordChange = (e) => {
     setConfirmPassword(e.target.value);
   };
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -63,6 +66,8 @@ const Register = () => {
             password: '',
           });
           setConfirmPassword('');
+          //redirect to the login form
+          navigate('/login');
         }
       } catch (err) {
         console.error(err);
@@ -74,22 +79,23 @@ const Register = () => {
     <Container className="register-container">
       <section className="register-content">
         <Row>
-          <Col lg={6}>
-            <div>
-              <h2>Join today and start saving your favorite recipes</h2>
-              <p>Create a free account to save your favorite recipes!</p>
-
+          <Col>
+            <div className="register-container-box">
               <Form
                 noValidate
                 validated={validated && passwordMatch}
                 onSubmit={handleSubmit}
                 className="register-form"
               >
+                <h1>Register.</h1>
+                <h2>Join today and start saving your favorite recipes</h2>
+                <p>Create a free account to save your favorite recipes!</p>
+
                 <Col>
                   <Row>
                     {/* First name */}
                     <Form.Group as={Col} controlId="validationFirst">
-                      <Form.Label>First name</Form.Label>
+                      <Form.Label>First name*</Form.Label>
                       <Form.Control
                         required
                         type="text"
@@ -103,7 +109,7 @@ const Register = () => {
 
                     {/* Last name */}
                     <Form.Group as={Col} controlId="validationLast">
-                      <Form.Label>Last name</Form.Label>
+                      <Form.Label>Last name*</Form.Label>
                       <Form.Control
                         required
                         type="text"
@@ -117,7 +123,7 @@ const Register = () => {
                   </Row>
                   {/* Username */}
                   <Form.Group as={Col} controlId="validationUsername">
-                    <Form.Label>Username</Form.Label>
+                    <Form.Label>Username*</Form.Label>
                     <InputGroup hasValidation>
                       <Form.Control
                         required
@@ -133,7 +139,7 @@ const Register = () => {
 
                   {/* Email */}
                   <Form.Group as={Col} controlId="validationEmail">
-                    <Form.Label>Email</Form.Label>
+                    <Form.Label>Email*</Form.Label>
                     <InputGroup hasValidation>
                       <Form.Control
                         required
@@ -150,7 +156,7 @@ const Register = () => {
                   <Row>
                     {/* password */}
                     <Form.Group as={Col} controlId="validationPassword">
-                      <Form.Label>Password</Form.Label>
+                      <Form.Label>Password*</Form.Label>
                       <Form.Control
                         required
                         type="password"
@@ -170,7 +176,7 @@ const Register = () => {
 
                     {/* confirmPassword */}
                     <Form.Group as={Col} controlId="validationConfirmPassword">
-                      <Form.Label>Confirm Password</Form.Label>
+                      <Form.Label>Confirm Password*</Form.Label>
                       <Form.Control
                         required
                         type="password"
@@ -186,22 +192,18 @@ const Register = () => {
                   </Row>
                 </Col>
 
-                <Form.Group className="mb-3">
+                <Form.Group className="mt-3 mb-3">
                   <Form.Check
                     required
                     label="Agree to terms and conditions"
                     feedbackType="invalid"
+                    className="no-line-through"
                   />
                 </Form.Group>
-                <Button type="submit">Submit form</Button>
+                <button type="submit" id="register-btn">
+                  Submit form
+                </button>
               </Form>
-            </div>
-          </Col>
-
-          <Col lg={6}>
-            <div>
-              <h3>already have an account? Log in here</h3>
-              <button>Log in</button>
             </div>
           </Col>
         </Row>

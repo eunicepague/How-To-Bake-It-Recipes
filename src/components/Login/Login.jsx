@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, InputGroup } from 'react-bootstrap';
 import axios from 'axios';
 import { UserContext } from '../UserContext';
 
-import './Register.css';
+import './Login.css';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -29,8 +29,8 @@ const Login = () => {
 
       if (response.status === 200) {
         console.log(response.data);
-        setIsLoggedIn(true); // Update isLoggedIn state here
-        setUsername(response.data.user.username); // Use the username from the response
+        setIsLoggedIn(true);
+        setUsername(response.data.user.username);
         alert('Successfully Logged In!');
       } else {
         console.error('Failed to login');
@@ -56,7 +56,7 @@ const Login = () => {
               <Form onSubmit={handleSubmit} className="login-form">
                 {/* Email */}
                 <Form.Group as={Col} controlId="validationEmail">
-                  <h1> Register.</h1>
+                  <h1> Log In.</h1>
                   <Form.Label>Email Address*</Form.Label>
                   <InputGroup hasValidation>
                     <Form.Control
