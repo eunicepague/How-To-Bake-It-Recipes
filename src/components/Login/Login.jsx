@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { Container, Row, Col, Form, InputGroup } from 'react-bootstrap';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../UserContext';
 
 import './Login.css';
@@ -9,6 +10,8 @@ const Login = () => {
   const [password, setPassword] = useState('');
 
   const { setIsLoggedIn, setUsername } = useContext(UserContext);
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,6 +35,7 @@ const Login = () => {
         setIsLoggedIn(true);
         setUsername(response.data.user.username);
         alert('Successfully Logged In!');
+        navigate('/');
       } else {
         console.error('Failed to login');
       }
