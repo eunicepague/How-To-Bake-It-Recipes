@@ -38,51 +38,53 @@ const Profiles = () => {
   }, [id]);
 
   return (
-    <Container fluid className="profile-container">
-      <section className="profile-content">
-        <Row>
-          {recipe && (
-            <Col className="profile-left" sm={12} md={12} lg={8}>
-              <div className="profile-info-container">
-                <Chef recipe={recipe} />
-                <Stat recipe={recipe} />
-                {recipe.equipment && <Equipment recipe={recipe} />}
-                <Ingredient recipe={recipe} />
-                <Instruction recipe={recipe} />
-                <Nutrition recipe={recipe} />
+    <>
+      <Container fluid className="profile-container">
+        <section className="profile-content">
+          <Row>
+            {recipe && (
+              <Col className="profile-left" sm={12} md={12} lg={8}>
+                <div className="profile-info-container">
+                  <Chef recipe={recipe} />
+                  <Stat recipe={recipe} />
+                  {recipe.equipment && <Equipment recipe={recipe} />}
+                  <Ingredient recipe={recipe} />
+                  <Instruction recipe={recipe} />
+                  <Nutrition recipe={recipe} />
 
-                <div className="profile-join">
-                  <div className="profile-join-content">
-                    <h1>Join today & start saving your favorite recipes</h1>
-                    <h5>
-                      Create an account to easily save your favorite recipes.
-                    </h5>
+                  <div className="profile-join">
+                    <div className="profile-join-content">
+                      <h1>Join today & start saving your favorite recipes</h1>
+                      <h5>
+                        Create an account to easily save your favorite recipes.
+                      </h5>
 
-                    <button>Save Recipe</button>
+                      <button>Save Recipe</button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Col>
-          )}
-          <Col
-            sm={12}
-            md={12}
-            lg={4}
-            className="d-sm-none d-lg-flex profile-about"
-          >
-            <Col>
-              <SideAbout />
+              </Col>
+            )}
+            <Col
+              sm={12}
+              md={12}
+              lg={4}
+              className="d-sm-none d-lg-flex profile-about"
+            >
+              <Col>
+                <SideAbout />
 
-              <SideLatest />
+                <SideLatest />
+              </Col>
             </Col>
-          </Col>
-        </Row>
+          </Row>
+        </section>
+      </Container>
 
-        {/* <About /> */}
-        <Related recipes={RelatedRecipe} />
-        <Comments recipeId={id} />
-      </section>
-    </Container>
+      {/* <About /> */}
+      <Related recipes={RelatedRecipe} />
+      <Comments recipeId={id} />
+    </>
   );
 };
 

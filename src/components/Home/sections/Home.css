@@ -134,7 +134,7 @@
 }
 
 .home-img-container {
-  display: flex;
+  /* display: flex; */
   width: 100%;
 }
 
@@ -173,6 +173,14 @@
 }
 
 @media (max-width: 576px) {
+  .row > * {
+    padding-left: 0 !important;
+  }
+
+  .home-container.container {
+    padding: 0.5rem !important;
+  }
+
   #home-intro h1 {
     font-size: 1.5rem;
   }

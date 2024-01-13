@@ -124,7 +124,9 @@ const Comments = ({ recipeId }) => {
             .reverse()
             .map((comment, index) => (
               <div key={index} className="comments-box-container">
-                <h3>{comment.name}</h3>
+                <h3>
+                  {comment.name.charAt(0).toUpperCase() + comment.name.slice(1)}
+                </h3>
                 <p>{new Date(comment.created_at).toLocaleString()}</p>
                 <p id="comments-comment">{comment.comment}</p>
               </div>

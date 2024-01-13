@@ -35,3 +35,11 @@
 #comments-comment {
   margin-top: 2rem;
 }
+
+@media (max-width: 576px) {
+  #comments-form,
+  .comments-commentSection {
+    padding: 0 1rem;
+    width: 100%;
+  }
+}

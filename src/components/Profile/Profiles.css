@@ -20,6 +20,12 @@
   padding: 0 !important;
 }
 
+/* @media (max-width: 576px) {
+  .profile-container.container {
+    padding: 0.5rem !important;
+  }
+} */
+
 /* ---------CHEF--------- */
 #profile-intro {
   display: flex;
@@ -246,5 +252,11 @@
 @media (max-width: 576px) {
   .profile-about {
     display: none;
+  }
+
+  .profile-chef-content h1 {
+    font-size: 2rem;
+    margin: 1rem 0;
+    /* text-align: center; */
   }
 }
