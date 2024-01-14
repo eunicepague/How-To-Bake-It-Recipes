@@ -80,7 +80,11 @@ const Headers = () => {
                       </NavDropdown.Item>
                     </NavDropdown>
 
-                    <Nav.Link as={Link} to="/profile" onClick={scrollToTop}>
+                    <Nav.Link
+                      as={Link}
+                      to="/saved-recipes"
+                      onClick={scrollToTop}
+                    >
                       Saved Recipes
                     </Nav.Link>
 
@@ -133,7 +137,7 @@ const Headers = () => {
                 <Nav.Link as={Link} to="/category" onClick={scrollToTop}>
                   Menu
                 </Nav.Link>
-                <Nav.Link as={Link} to="/profile" onClick={scrollToTop}>
+                <Nav.Link as={Link} to="/saved-recipes" onClick={scrollToTop}>
                   Saved Recipes
                 </Nav.Link>
                 <Nav.Link as={Link} to="/" onClick={logout}>
@@ -151,7 +155,7 @@ const Headers = () => {
                 <Nav.Link as={Link} to="/category" onClick={scrollToTop}>
                   Menu
                 </Nav.Link>
-                <Nav.Link as={Link} to="/profile" onClick={scrollToTop}>
+                <Nav.Link as={Link} to="/saved-recipes" onClick={scrollToTop}>
                   Saved Recipes
                 </Nav.Link>
                 <Nav.Link as={Link} to="/login" onClick={scrollToTop}>
