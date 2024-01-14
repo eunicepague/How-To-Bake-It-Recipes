@@ -31,7 +31,7 @@ const Related = () => {
         <div id="home-intro">
           <h1>Related Recipes</h1>
           <div className="horizontal-line"></div>
-          <h5>view more</h5>
+          {/* <h5>view more</h5> */}
         </div>
         <Recipe recipes={relatedRecipes} />
       </section>

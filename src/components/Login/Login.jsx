@@ -97,7 +97,7 @@ const Login = () => {
                 <Form.Group className="mt-3">
                   <Form.Check
                     required
-                    label="Agree to terms and conditions"
+                    label="Keep me Log in"
                     feedbackType="invalid"
                     className="no-line-through"
                   />

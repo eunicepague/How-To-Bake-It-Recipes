@@ -106,7 +106,9 @@ const Comments = ({ recipeId }) => {
                     onChange={handleChange}
                     disabled
                   />
-                  {!user && <p>You need to Log in or register to comment! </p>}{' '}
+                  {!user && (
+                    <p>You need to Log in or Register first to comment! </p>
+                  )}{' '}
                 </Form.Group>
               </div>
 

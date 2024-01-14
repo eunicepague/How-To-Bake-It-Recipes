@@ -8,7 +8,7 @@ import {
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { UserContext } from './UserContext';
-
+import Menu from './../assets/menu.png';
 import Logo from './../assets/logo.png';
 
 import './Headers.css';
@@ -44,13 +44,13 @@ const Headers = () => {
             <img src={Logo} id="logo" />
           </Navbar.Brand>
 
-          <button
+          <img
+            src={Menu}
             onClick={handleShow}
             id="headers-toggle"
             className="d-flex d-lg-none"
-          >
-            launch
-          </button>
+          />
+
           <Navbar.Collapse
             id="basic-navbar-nav"
             className="justify-content-center"

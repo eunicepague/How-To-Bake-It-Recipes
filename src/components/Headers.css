@@ -36,3 +36,8 @@
   color: black;
   font-weight: bold;
 }
+
+#headers-toggle {
+  width: 2rem;
+  margin-right: 1rem;
+}
