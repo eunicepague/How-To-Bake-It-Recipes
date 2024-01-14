@@ -128,7 +128,7 @@ const Hero = ({ handleReset }) => {
           </Container>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <Container className="offcanvas-img-container">
+          <Container fluid className="offcanvas-img-container">
             {filteredRecipes.map((recipe) => (
               <div key={recipe.id} className="offcanvas-img-content">
                 <img src={recipe.image[0]} />
