@@ -27,3 +27,12 @@
   position: absolute;
   right: 5rem;
 }
+
+.headers-offcanvas {
+  display: flex;
+  flex-direction: column;
+}
+.headers-offcanvas a {
+  color: black;
+  font-weight: bold;
+}
