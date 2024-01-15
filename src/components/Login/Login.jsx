@@ -39,6 +39,7 @@ const Login = () => {
 
         //store the user's login state in local storage
         localStorage.setItem('user', JSON.stringify(response.data.user));
+        // localStorage.setItem('userId', response.data.user.id);
       } else {
         console.error('Failed to login');
       }
