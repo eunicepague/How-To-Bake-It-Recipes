@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import './Saved.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Saved = () => {
   const [savedRecipes, setSavedRecipes] = useState([]);
@@ -44,21 +45,45 @@ const Saved = () => {
     <Container fluid className="saved-container">
       <section className="saved-content">
         <Col>
-          <h1>Saved Recipes.</h1>
+          <div id="saved-intro">
+            <h1>Saved Recipes.</h1>
+            <button
+              className="d-none d-sm-flex saved-btn"
+              onClick={deleteSavedRecipes}
+            >
+              Delete All
+            </button>
+          </div>
+
           <h4>Your Collections</h4>
-          <Button onClick={deleteSavedRecipes}>Delete All Saved Recipes</Button>
+          <button
+            className="d-flex d-sm-none saved-btn-sm"
+            onClick={deleteSavedRecipes}
+          >
+            Delete All
+          </button>
 
           {savedRecipes.map((recipe, index) => (
-            <Row className="saved-img-container" key={index}>
-              <Col sm={12} md={4} lg={4}>
-                <img src={recipe.image[0]} alt="" />
-              </Col>
+            <div key={index}>
+              <Link
+                to={`/category/${
+                  Array.isArray(recipe.category)
+                    ? recipe.category[0].toLowerCase() // Use the first category instead of joining all
+                    : recipe.category.toLowerCase()
+                }/${recipe.id}`}
+              >
+                <Row className="saved-img-container">
+                  <Col sm={12} md={4} lg={3} id>
+                    <img src={recipe.image[0]} alt="" />
+                  </Col>
 
-              <Col sm={12} md={8} lg={8} id="saved-img-intro">
-                <h2>{recipe.title}</h2>
-                <p>{recipe.description}</p>
-              </Col>
-            </Row>
+                  <Col sm={12} md={8} lg={9} id="saved-img-intro">
+                    <h2>{recipe.title}</h2>
+                    <p>{recipe.description}</p>
+                  </Col>
+                </Row>
+              </Link>
+            </div>
           ))}
         </Col>
       </section>
