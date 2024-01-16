@@ -12,14 +12,27 @@ const Icecreams = () => {
     try {
       const response = await axios.get(`${import.meta.env.VITE_API}/recipes`);
       const data = response.data;
-      const icecreamRecipes = data.filter(
-        (recipe) => recipe.category === 'Ice Cream'
+      const cookieRecipes = data.filter((recipe) =>
+        Array.isArray(recipe.category)
+          ? recipe.category.includes('Ice Cream')
+          : recipe.category === 'Ice Cream'
       );
-      setRecipes(icecreamRecipes);
+      setRecipes(cookieRecipes);
     } catch (error) {
       console.error('Error fetching data: ', error);
     }
   };
+  //   try {
+  //     const response = await axios.get(`${import.meta.env.VITE_API}/recipes`);
+  //     const data = response.data;
+  //     const icecreamRecipes = data.filter(
+  //       (recipe) => recipe.category === 'Ice Cream'
+  //     );
+  //     setRecipes(icecreamRecipes);
+  //   } catch (error) {
+  //     console.error('Error fetching data: ', error);
+  //   }
+  // };
 
   useEffect(() => {
     fetchData();
